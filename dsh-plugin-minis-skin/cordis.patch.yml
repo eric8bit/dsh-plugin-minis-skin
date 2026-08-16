@@ -1,0 +1,5 @@
+# dsh bundle patch: 将 Minis 皮肤插件插入 profile 的层叠栈（0806+）。
+# 该行只激活包本身；客户端皮肤由 client-modules 依据 dsh.client 声明自动加载。
+- insert:
+    - id: minis-skin
+      name: '@dsh-external/dsh-plugin-minis-skin'
