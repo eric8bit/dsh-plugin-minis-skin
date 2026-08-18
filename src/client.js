@@ -130,12 +130,8 @@ function apply(ctx) {
   if (theme === undefined) return;
 
   ctx.effect(() => {
+    // 不强制主题：尊重用户的浅色/深色/跟随系统偏好，皮肤按当前明暗自动应用对应配色。
     const disposer = theme.overrideTokens('minis-skin', SKIN_TOKENS);
-    try {
-      theme.setTheme('light');
-    } catch (error) {
-      console.error('minis-skin setTheme:', error);
-    }
     return () => {
       disposer();
       if (tag !== null) tag.remove();
